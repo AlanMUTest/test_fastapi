@@ -48,5 +48,29 @@ mcq = {
 }
 
 flashcard = {
-    
+    "type": "OBJECT",
+    "properties": {
+        "flashcard": {
+            "type": "ARRAY",
+            "items": {
+                "type": "OBJECT",
+                "properties": {
+                    "Flashcard Number": {
+                        "type": "INTEGER"
+                    },
+                    "Front Side": {
+                        "type": "STRING"
+                    },
+                    "Back Side": {
+                        "type": "STRING"
+                    }
+                },
+                "required": [
+                    "Flashcard Number",
+                    "Front Side",
+                    "Back Side"
+                ]
+            }
+        }
+    }
 }
