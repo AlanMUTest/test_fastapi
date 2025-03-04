@@ -8,7 +8,7 @@ import os
 import schema.json_schema as json_schema
 #from app.config import Settings
 
-#os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv('gcp_credential')
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv('gcp_credential')
 client = genai.Client(
     vertexai=True,
     project=os.getenv('gcp_project'),
