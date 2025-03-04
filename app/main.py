@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from api.routes.endpoint import model_router
-#from dotenv import load_dotenv
+from app.api.routes.endpoint import model_router
+from dotenv import load_dotenv
 
-#load_dotenv()
+load_dotenv()
 
 app = FastAPI()
 
