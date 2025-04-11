@@ -5,7 +5,7 @@ from fastapi import File, Query, UploadFile, APIRouter
 
 from app.api.routes.model.alibaba.qwen25_vl_72b_instruct import generate as alibaba_generate
 from app.api.routes.model.google.gemini_20_flash_exp import generate as google_flash_generate
-from app.api.routes.model.google.gemini_20_pro_exp_02_05 import generate as google_pro_generate
+from app.api.routes.model.google.gemini_25_pro_exp import generate as google_pro_generate
 from app.api.routes.model.meta.llama_32_11b_vision_instruct import generate as meta_generate
 from app.api.routes.model.mistral.mistral_small_31_24b_instruct import generate as mistral_generate
 
@@ -21,7 +21,7 @@ async def auto_select_generate(file: UploadFile = File(...),
     model_functions: List[Dict[str, Any]] = [
         {"name": "qwen25_vl_72b_instruct", "func": alibaba_generate},
         {"name": "gemini_20_flash_exp", "func": google_flash_generate},
-        {"name": "gemini_20_pro_exp_02_05", "func": google_pro_generate},
+        {"name": "gemini_25_pro_exp", "func": google_pro_generate},
         {"name": "llama_32_11b_vision_instruct", "func": meta_generate},
         {"name": "mistral_small_31_24b_instruct", "func": mistral_generate},
     ]

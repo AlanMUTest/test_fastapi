@@ -14,13 +14,13 @@ client = genai.Client(
     project=os.getenv('gcp_project'),
     location=os.getenv('gcp_genai_location'),
 )
-model = "gemini-2.0-pro-exp-02-05"
+model = "gemini-2.5-pro-exp-03-25"
 
 router = APIRouter()
 
 SchemaType = Literal["null", "mcq", "flashcard"]
 
-@router.post("gemini-2.0-pro-exp-02-05")
+@router.post("gemini-2.5-pro-exp")
 async def generate(file: UploadFile = File(...),
                    schema_type: SchemaType = Query("null", description="Type of content to generate ('mcq' or 'flashcard')"),
                    num: int = Query(5, description="Number of items to generate(1 - 10)")):
